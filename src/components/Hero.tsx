@@ -1,4 +1,3 @@
-import React from "react";
 import { WorldMap } from "./ui/WorldMap";
 
 const Hero = () => {

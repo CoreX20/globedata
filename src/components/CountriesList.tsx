@@ -64,15 +64,6 @@ const CountriesList = () => {
       )
     : [];
 
-  // const filteredCountries = useMemo(() => {
-  //   console.log("test memo");
-  //   return data
-  //     ? data.countries.filter((country) =>
-  //         country.name.toLowerCase().includes(searchQuery.toLowerCase())
-  //       )
-  //     : [];
-  // }, [data, searchQuery]);
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
