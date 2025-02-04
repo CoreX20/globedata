@@ -3,6 +3,10 @@
     {
       "source": "/api/v1/chat/completions",
       "destination": "https://integrate.api.nvidia.com/v1/chat/completions"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/$1"
     }
   ]
 }
