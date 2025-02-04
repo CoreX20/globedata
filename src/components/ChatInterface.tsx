@@ -138,7 +138,7 @@ const ChatInterface = () => {
                 {message.sender === "ai" && (
                   <div className="w-8 h-8 rounded-full overflow-hidden mr-2 flex-shrink-0 flex items-center">
                     <img
-                      src="./earth.svg"
+                      src="/earth.svg"
                       alt="AI Avatar"
                       className="w-full h-full object-cover"
                     />
