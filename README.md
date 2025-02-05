@@ -13,7 +13,7 @@ Follow these instructions to set up the project locally.
 Clone the repository to your local using the following command:
 
 ```
-git clone https://github.com/your-username/globedata.git
+git clone https://github.com/CoreX20/globedata.git
 cd globedata
 ```
 
