@@ -1,50 +1,73 @@
-# React + TypeScript + Vite
+# GlobeData App 🌍
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Project Overview
 
-Currently, two official plugins are available:
+GlobeData is a web application designed to provide users with information about countries, travel recommendations, and other geographical insights. The app utilizes AI-powered chat interfaces to answer user queries about countries, places, languages, cultures, and more. It also includes Google OAuth authentication to allow users to sign in securely and access protected content.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup Instructions
 
-## Expanding the ESLint configuration
+Follow these instructions to set up the project locally.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 1. Clone the repository
 
-- Configure the top-level `parserOptions` property like this:
+Clone the repository to your local using the following command:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```
+git clone https://github.com/your-username/globedata.git
+cd globedata
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+Install the required dependencies:
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+npm install --legacy-peer-deps
+```
+
+### 3. Set environment variables
+
+Create a `.env` file in the root of the project and add the following environment variables:
+
+```
+# Google OAuth client ID
+VITE_GOOGLE_CLIENT_ID=your-google-client-id-here
+
+# Your NVIDIA API Key (https://build.nvidia.com/meta/llama-3_1-405b-instruct)
+VITE_NVIDIA_API_KEY=your-api-key-here
+```
+
+### 4. Run the development server
+
+To start the development server, run:
+
+```
+npm run dev
+```
+
+## Available Features
+
+- **Google OAuth Login**: Users can sign in using their Google account for a secure and seamless experience.
+- **Country Information**: Users can explore various countries, including their culture, famous places, languages, and travel recommendations.
+- **AI-powered Chat Interface**: Users can ask the AI about specific countries, and the assistant will provide detailed and friendly responses.
+
+## Technical Decisions and Architecture
+
+1. The project is built using **React** with **TypeScript** for better type safety and a smoother development experience.
+
+2. **Google OAuth Authentication**: The app uses **Google OAuth** for authentication, allowing users to log in with their Google account. The OAuth process is handled by the **@react-oauth/google** library. Once authenticated, the user's credentials are stored in **localStorage**
+
+## Future Improvements
+
+Here are a few potential areas for future development:
+
+1. **User Profile**:
+
+   - Add a **user profile** page where users can save their preferences (e.g., favorite countries, chat history).
+
+2. **Unit and Integration Tests**:
+
+   - Add **tests** using **Jest** and **React Testing Library** to ensure the reliability and robustness of the app, especially core features like authentication and the chat interface.
+
+3. **Improve UI/UX**:
+   - Enhance the **UI** with better design patterns and animations to provide a more engaging user experience.
